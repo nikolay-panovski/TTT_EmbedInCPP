@@ -145,11 +145,21 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="LuaTestMethods\Test0.cpp" />
+    <ClCompile Include="LuaTestMethods\Test1.cpp" />
+    <ClCompile Include="LuaTestMethods\TestMethod.cpp" />
+    <ClCompile Include="LuaTestMethods\TestRunner.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="crossglobal.lua" />
     <None Include="helloworld.lua" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="LuaTestMethods\Test0.h" />
+    <ClInclude Include="LuaTestMethods\Test1.h" />
+    <ClInclude Include="LuaTestMethods\TestMethod.h" />
+    <ClInclude Include="LuaTestMethods\TestRunner.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

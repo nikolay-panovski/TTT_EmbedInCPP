@@ -18,9 +18,9 @@ int main(int argc, char* argv[]) {
 
 	/** TestRunner wraps Lua initialization & close code.
 	 *  Open the corresponding .lua file for the Lua code and Test#.cpp for the C++ code.
-	 *  Optionally choose whether to print an error code after the loadfile.
+	 *  Optionally choose whether to print status/error code after the loadfile.
 	 */
-	TestRunner testRunner("array_print.lua", test2, false);	
+	TestRunner testRunner("array_print.lua", test2, true);	
 
 	//TestRunner testRunner("helloworld.lua", test1, false);	// Lua file + test number mismatch handled in the test1.Run()
 

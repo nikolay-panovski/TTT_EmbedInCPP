@@ -5,9 +5,15 @@ TestRunner::TestRunner(const char* filename, TestMethod& runMethod, bool printEr
 	luaL_openlibs(lua);
 
 	if (printError) {
-		int errcode = luaL_loadfile(lua, filename);
+		if (luaL_loadfile(lua, filename) != LUA_OK) {
+			printf_s("Error code: %s\n", lua_tostring(lua, -1));
 
-		printf_s("Error code: %i\n", errcode);
+			// TODO in good code: throw and handle an exception (god bless StackOverflow)
+			// else runMethod.Run below will throw an exception
+		}
+		else {
+			printf_s("LUA_OK: Lua file loaded fine.\n");
+		}
 	}
 	else {
 		luaL_loadfile(lua, filename);

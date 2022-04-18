@@ -28,12 +28,18 @@
     <ClCompile Include="LuaTestMethods\TestRunner.cpp">
       <Filter>Source Files\Initial Tests</Filter>
     </ClCompile>
+    <ClCompile Include="LuaTestMethods\Test2.cpp">
+      <Filter>Source Files\Initial Tests\Test Methods</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="helloworld.lua">
       <Filter>Source Files\Initial Tests</Filter>
     </None>
     <None Include="crossglobal.lua">
+      <Filter>Source Files\Initial Tests</Filter>
+    </None>
+    <None Include="array_print.lua">
       <Filter>Source Files\Initial Tests</Filter>
     </None>
   </ItemGroup>
@@ -49,6 +55,9 @@
     </ClInclude>
     <ClInclude Include="LuaTestMethods\TestRunner.h">
       <Filter>Source Files\Initial Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="LuaTestMethods\Test2.h">
+      <Filter>Source Files\Initial Tests\Test Methods</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

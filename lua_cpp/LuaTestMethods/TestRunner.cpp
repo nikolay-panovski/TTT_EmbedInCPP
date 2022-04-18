@@ -23,5 +23,5 @@ TestRunner::TestRunner(const char* filename, TestMethod& runMethod, bool printEr
 }
 
 TestRunner::~TestRunner() {
-
+	printf_s("TestRunner destroyed. Tests ending. \n");
 }

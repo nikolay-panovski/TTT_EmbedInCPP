@@ -156,6 +156,7 @@
     <None Include="array_print.lua" />
     <None Include="crossglobal.lua" />
     <None Include="helloworld.lua" />
+    <None Include="readInCPP_simple_onevar.lua" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="LuaTestMethods\Test0.h" />

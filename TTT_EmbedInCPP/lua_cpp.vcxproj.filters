@@ -42,6 +42,9 @@
     <None Include="array_print.lua">
       <Filter>Source Files\Initial Tests</Filter>
     </None>
+    <None Include="readInCPP_simple_onevar.lua">
+      <Filter>Source Files</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="LuaTestMethods\Test0.h">

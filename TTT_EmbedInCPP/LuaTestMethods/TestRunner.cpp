@@ -1,6 +1,6 @@
 #include "TestRunner.h"
 
-TestRunner::TestRunner(const char* filename, TestMethod& runMethod, bool printError) {
+TestRunner::TestRunner(const char* filename, TestMethod& runMethod, int sampleCount, int runsPerSample, bool printError) {
 	this->lua = luaL_newstate();
 	luaL_openlibs(lua);
 
@@ -21,11 +21,44 @@ TestRunner::TestRunner(const char* filename, TestMethod& runMethod, bool printEr
 
 	lua_call(lua, 0, 0);	// lua_call(state, params, returns);
 
-	runMethod.Run(lua);
+	RunWithMeasurements(runMethod, sampleCount, runsPerSample);
 
 	lua_pop(lua, 1);
 
 	lua_close(lua);
+}
+
+void TestRunner::RunWithMeasurements(TestMethod& runMethod, int sampleCount, int runsPerSample) {
+	for (int i = 1; i <= sampleCount; i++) {
+
+		//printf_s("Entering new sample.\n");
+
+		high_resolution_clock::time_point sampleStart = high_resolution_clock::now();
+
+		for (int i = 1; i <= runsPerSample; i++) {
+			high_resolution_clock::time_point runStart = high_resolution_clock::now();
+			runMethod.Run(lua);
+			high_resolution_clock::time_point runEnd = high_resolution_clock::now();
+			TestRunner::MeasureTime(runStart, runEnd, "\t\tRun");	// string in simple form to avoid throttle via many string conversions
+		}
+
+		high_resolution_clock::time_point sampleEnd = high_resolution_clock::now();
+		TestRunner::MeasureTime(sampleStart, sampleEnd, "\tSample");
+
+		// TODO: Export (write to file) time info from runs/samples automatically
+		// TODO: Ensure/prove split of measure/write time between samples from actual run time
+	}
+}
+
+void TestRunner::MeasureTime(high_resolution_clock::time_point start, high_resolution_clock::time_point end, std::string scope) {
+	nanoseconds time_span_nano = duration_cast<nanoseconds>(end - start);
+	microseconds time_span_micro = duration_cast<microseconds>(end - start);
+	milliseconds time_span_milli = duration_cast<milliseconds>(end - start);
+	seconds time_span_seconds = duration_cast<seconds>(end - start);
+	printf_s("%s took %I64i nanoseconds.\n", scope.c_str(), time_span_nano.count());
+	printf_s("%s took %I64i microseconds.\n", scope.c_str(), time_span_micro.count());
+	printf_s("            aka %I64i milliseconds.\n", time_span_milli.count());
+	printf_s("            aka %I64i seconds.\n", time_span_seconds.count());
 }
 
 TestRunner::~TestRunner() {

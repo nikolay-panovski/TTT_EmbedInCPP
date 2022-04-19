@@ -11,6 +11,9 @@
     <Filter Include="Source Files\Initial Tests\Test Methods">
       <UniqueIdentifier>{5749646d-c375-40df-a94d-7ce23ccc26d1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Performance Tests Lua">
+      <UniqueIdentifier>{1f293f3c-dae0-4eb7-97aa-55819e9e60f8}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -31,6 +34,9 @@
     <ClCompile Include="LuaTestMethods\Test2.cpp">
       <Filter>Source Files\Initial Tests\Test Methods</Filter>
     </ClCompile>
+    <ClCompile Include="LuaTestMethods\ReadNumber.cpp">
+      <Filter>Source Files\Performance Tests Lua</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="helloworld.lua">
@@ -42,7 +48,7 @@
     <None Include="array_print.lua">
       <Filter>Source Files\Initial Tests</Filter>
     </None>
-    <None Include="readInCPP_simple_onevar.lua">
+    <None Include="readInCPP_simple_number.lua">
       <Filter>Source Files</Filter>
     </None>
   </ItemGroup>
@@ -61,6 +67,9 @@
     </ClInclude>
     <ClInclude Include="LuaTestMethods\Test2.h">
       <Filter>Source Files\Initial Tests\Test Methods</Filter>
+    </ClInclude>
+    <ClInclude Include="LuaTestMethods\ReadNumber.h">
+      <Filter>Source Files\Performance Tests Lua</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

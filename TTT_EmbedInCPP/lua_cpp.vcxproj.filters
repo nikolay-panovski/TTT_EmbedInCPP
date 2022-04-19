@@ -37,6 +37,9 @@
     <ClCompile Include="LuaTestMethods\ReadNumber.cpp">
       <Filter>Source Files\Performance Tests Lua</Filter>
     </ClCompile>
+    <ClCompile Include="LuaTestMethods\ReadString.cpp">
+      <Filter>Source Files\Performance Tests Lua</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="helloworld.lua">
@@ -49,6 +52,9 @@
       <Filter>Source Files\Initial Tests</Filter>
     </None>
     <None Include="readInCPP_simple_number.lua">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="readInCPP_simple_string.lua">
       <Filter>Source Files</Filter>
     </None>
   </ItemGroup>
@@ -69,6 +75,9 @@
       <Filter>Source Files\Initial Tests\Test Methods</Filter>
     </ClInclude>
     <ClInclude Include="LuaTestMethods\ReadNumber.h">
+      <Filter>Source Files\Performance Tests Lua</Filter>
+    </ClInclude>
+    <ClInclude Include="LuaTestMethods\ReadString.h">
       <Filter>Source Files\Performance Tests Lua</Filter>
     </ClInclude>
   </ItemGroup>

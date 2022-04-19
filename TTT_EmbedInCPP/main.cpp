@@ -13,6 +13,7 @@
 #include "LuaTestMethods/Test2.h"
 
 #include "LuaTestMethods/ReadNumber.h"
+#include "LuaTestMethods/ReadString.h"
 
 using namespace std;
 using namespace std::chrono;
@@ -26,6 +27,7 @@ int main(int argc, char* argv[]) {
 	Test2 test2;
 	/**/
 	ReadNumber readNumber;
+	ReadString readString;
 	/**/
 
 	printf_s("Entering functional method.\n");
@@ -38,7 +40,8 @@ int main(int argc, char* argv[]) {
 	// Optionally choose whether to print status/error code after the loadfile.
 
 	// SECTION: Final Lua tests (via class instances + TestRunner).
-	TestRunner testRunner("readInCPP_simple_number.lua", readNumber, 64, 1024, false);
+	//TestRunner testRunner("readInCPP_simple_number.lua", readNumber, 64, 1024, false);
+	TestRunner testRunner("readInCPP_simple_string.lua", readString, 64, 1024, false);
 	/**/
 
 	high_resolution_clock::time_point end = high_resolution_clock::now();

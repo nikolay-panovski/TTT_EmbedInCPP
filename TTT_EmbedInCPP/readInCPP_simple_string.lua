@@ -1,0 +1,1 @@
+readVar = "new string"

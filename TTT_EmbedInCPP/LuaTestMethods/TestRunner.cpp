@@ -1,11 +1,12 @@
 #include "TestRunner.h"
 
-TestRunner::TestRunner(const char* filename, TestMethod& runMethod, int sampleCount, int runsPerSample, bool printError) {
+TestRunner::TestRunner(const char* luaFilename, const char* measureStoreFilename,
+					   TestMethod& runMethod, int sampleCount, int runsPerSample, bool printError) {
 	this->lua = luaL_newstate();
 	luaL_openlibs(lua);
 
 	if (printError) {
-		if (luaL_loadfile(lua, filename) != LUA_OK) {
+		if (luaL_loadfile(lua, luaFilename) != LUA_OK) {
 			printf_s("Error code: %s\n", lua_tostring(lua, -1));
 
 			// TODO in good code: throw and handle an exception (god bless StackOverflow)
@@ -16,23 +17,24 @@ TestRunner::TestRunner(const char* filename, TestMethod& runMethod, int sampleCo
 		}
 	}
 	else {
-		luaL_loadfile(lua, filename);
+		luaL_loadfile(lua, luaFilename);
 	}
 
 	lua_call(lua, 0, 0);	// lua_call(state, params, returns);
 
-	RunWithMeasurements(runMethod, sampleCount, runsPerSample);
+	RunWithMeasurements(measureStoreFilename, runMethod, sampleCount, runsPerSample);
 
 	lua_pop(lua, 1);
 
 	lua_close(lua);
 }
 
-void TestRunner::RunWithMeasurements(TestMethod& runMethod, int sampleCount, int runsPerSample) {
+void TestRunner::RunWithMeasurements(const char* fileToWriteIn,
+									 TestMethod& runMethod, int sampleCount, int runsPerSample) {
+	std::ofstream sampleTimeWriter;
+	sampleTimeWriter.open(fileToWriteIn);
+
 	for (int i = 1; i <= sampleCount; i++) {
-
-		//printf_s("Entering new sample.\n");
-
 		high_resolution_clock::time_point sampleStart = high_resolution_clock::now();
 
 		for (int i = 1; i <= runsPerSample; i++) {
@@ -43,14 +45,16 @@ void TestRunner::RunWithMeasurements(TestMethod& runMethod, int sampleCount, int
 		}
 
 		high_resolution_clock::time_point sampleEnd = high_resolution_clock::now();
-		TestRunner::MeasureTime(sampleStart, sampleEnd, "\tSample");
+		long long sampleTime = TestRunner::MeasureTime(sampleStart, sampleEnd, "\tSample");
 
 		// TODO: Export (write to file) time info from runs/samples automatically
-		// TODO: Ensure/prove split of measure/write time between samples from actual run time
+		sampleTimeWriter << "Sample "  << i << " time: " << sampleTime << " milliseconds" << "\n";
 	}
+
+	sampleTimeWriter.close();
 }
 
-void TestRunner::MeasureTime(high_resolution_clock::time_point start, high_resolution_clock::time_point end, std::string scope) {
+long long TestRunner::MeasureTime(high_resolution_clock::time_point start, high_resolution_clock::time_point end, std::string scope) {
 	nanoseconds time_span_nano = duration_cast<nanoseconds>(end - start);
 	microseconds time_span_micro = duration_cast<microseconds>(end - start);
 	milliseconds time_span_milli = duration_cast<milliseconds>(end - start);
@@ -59,6 +63,8 @@ void TestRunner::MeasureTime(high_resolution_clock::time_point start, high_resol
 	printf_s("%s took %I64i microseconds.\n", scope.c_str(), time_span_micro.count());
 	printf_s("            aka %I64i milliseconds.\n", time_span_milli.count());
 	printf_s("            aka %I64i seconds.\n", time_span_seconds.count());
+
+	return time_span_milli.count();
 }
 
 TestRunner::~TestRunner() {

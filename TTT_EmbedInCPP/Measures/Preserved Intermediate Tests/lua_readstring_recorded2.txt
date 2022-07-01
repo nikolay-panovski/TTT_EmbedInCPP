@@ -1,0 +1,79 @@
+01/07/2022, 20:06.
+
+Reason to preserve: Higher overall sample times compared to number tests and previous preserved string test. Anomaly with sample 2 taking extra long (not observed in any prevous test by far).
+
+Conditions: 
+ - TestRunner testRunner("readInCPP_simple_number.lua", "Measures/lua_read_number.txt", readNumber, 64, 1024, false);
+ (samples = 64; runs per sample = 1024)
+ - Same string read from Lua file every run and sample, no modifications ever between runs OR samples.
+ - String read = "new string asjfakagshkisjgoidfoisjghdtoikofvkgbpfohdkfovjdifohkfgpbodrxfksgio;dfhjdfpo;hijtfig;jdifo;idgljhfio;ghlnjilhgjdiofgb;fjjhghjn.hjvklnhb;jgldjugskefhsekdjhvgdhfkjbkdfhbmhdhxffshfdhdgdfgfgfghgnghjydgsdfcbmnkjkhbn".
+
+(process memory ~760KB, tracking directly from the diagnostics but unofficial)
+
+TEST OUTPUT (AUTOMATIC) BELOW
+--------
+
+Sample 1 time: 1351 milliseconds
+Sample 2 time: 2306 milliseconds
+Sample 3 time: 545 milliseconds
+Sample 4 time: 119 milliseconds
+Sample 5 time: 114 milliseconds
+Sample 6 time: 115 milliseconds
+Sample 7 time: 113 milliseconds
+Sample 8 time: 112 milliseconds
+Sample 9 time: 116 milliseconds
+Sample 10 time: 113 milliseconds
+Sample 11 time: 120 milliseconds
+Sample 12 time: 114 milliseconds
+Sample 13 time: 117 milliseconds
+Sample 14 time: 114 milliseconds
+Sample 15 time: 115 milliseconds
+Sample 16 time: 117 milliseconds
+Sample 17 time: 117 milliseconds
+Sample 18 time: 114 milliseconds
+Sample 19 time: 117 milliseconds
+Sample 20 time: 115 milliseconds
+Sample 21 time: 120 milliseconds
+Sample 22 time: 110 milliseconds
+Sample 23 time: 115 milliseconds
+Sample 24 time: 104 milliseconds
+Sample 25 time: 109 milliseconds
+Sample 26 time: 110 milliseconds
+Sample 27 time: 107 milliseconds
+Sample 28 time: 108 milliseconds
+Sample 29 time: 108 milliseconds
+Sample 30 time: 110 milliseconds
+Sample 31 time: 105 milliseconds
+Sample 32 time: 111 milliseconds
+Sample 33 time: 107 milliseconds
+Sample 34 time: 106 milliseconds
+Sample 35 time: 112 milliseconds
+Sample 36 time: 112 milliseconds
+Sample 37 time: 109 milliseconds
+Sample 38 time: 109 milliseconds
+Sample 39 time: 110 milliseconds
+Sample 40 time: 107 milliseconds
+Sample 41 time: 113 milliseconds
+Sample 42 time: 108 milliseconds
+Sample 43 time: 104 milliseconds
+Sample 44 time: 107 milliseconds
+Sample 45 time: 108 milliseconds
+Sample 46 time: 112 milliseconds
+Sample 47 time: 110 milliseconds
+Sample 48 time: 106 milliseconds
+Sample 49 time: 113 milliseconds
+Sample 50 time: 110 milliseconds
+Sample 51 time: 110 milliseconds
+Sample 52 time: 109 milliseconds
+Sample 53 time: 107 milliseconds
+Sample 54 time: 108 milliseconds
+Sample 55 time: 108 milliseconds
+Sample 56 time: 108 milliseconds
+Sample 57 time: 111 milliseconds
+Sample 58 time: 106 milliseconds
+Sample 59 time: 112 milliseconds
+Sample 60 time: 108 milliseconds
+Sample 61 time: 116 milliseconds
+Sample 62 time: 105 milliseconds
+Sample 63 time: 111 milliseconds
+Sample 64 time: 107 milliseconds

@@ -1,0 +1,79 @@
+01/07/2022, ~19:20.
+
+Reason to preserve: First time observed a high difference in the time between the first 2-3 samples and the rest (with a trend of the time lowering, stabilizing afterwards).
+
+Conditions: 
+ - TestRunner testRunner("readInCPP_simple_number.lua", "Measures/lua_read_number.txt", readNumber, 64, 1024, false);
+ (samples = 64; runs per sample = 1024)
+ - Same number read from Lua file every run and sample, no modifications ever between runs OR samples.
+
+ Over additional attempts (~10 in the next 10 minutes):
+ - Randomly the .txt from each attempt was either preserved or deleted (no significant differences from this action detected).    - Numbers read = 42; 1048573 (barely below 2^20); 1099511627773 (barely below 2^40) (no significant differences from this action detected).
+
+TEST OUTPUT (AUTOMATIC) BELOW
+--------
+
+Sample 1 time: 1252 milliseconds
+Sample 2 time: 1051 milliseconds
+Sample 3 time: 287 milliseconds
+Sample 4 time: 102 milliseconds
+Sample 5 time: 104 milliseconds
+Sample 6 time: 101 milliseconds
+Sample 7 time: 96 milliseconds
+Sample 8 time: 102 milliseconds
+Sample 9 time: 99 milliseconds
+Sample 10 time: 102 milliseconds
+Sample 11 time: 96 milliseconds
+Sample 12 time: 101 milliseconds
+Sample 13 time: 95 milliseconds
+Sample 14 time: 101 milliseconds
+Sample 15 time: 99 milliseconds
+Sample 16 time: 100 milliseconds
+Sample 17 time: 103 milliseconds
+Sample 18 time: 99 milliseconds
+Sample 19 time: 99 milliseconds
+Sample 20 time: 97 milliseconds
+Sample 21 time: 97 milliseconds
+Sample 22 time: 98 milliseconds
+Sample 23 time: 100 milliseconds
+Sample 24 time: 96 milliseconds
+Sample 25 time: 104 milliseconds
+Sample 26 time: 95 milliseconds
+Sample 27 time: 99 milliseconds
+Sample 28 time: 95 milliseconds
+Sample 29 time: 102 milliseconds
+Sample 30 time: 98 milliseconds
+Sample 31 time: 103 milliseconds
+Sample 32 time: 97 milliseconds
+Sample 33 time: 98 milliseconds
+Sample 34 time: 96 milliseconds
+Sample 35 time: 104 milliseconds
+Sample 36 time: 98 milliseconds
+Sample 37 time: 102 milliseconds
+Sample 38 time: 99 milliseconds
+Sample 39 time: 93 milliseconds
+Sample 40 time: 101 milliseconds
+Sample 41 time: 95 milliseconds
+Sample 42 time: 105 milliseconds
+Sample 43 time: 96 milliseconds
+Sample 44 time: 102 milliseconds
+Sample 45 time: 95 milliseconds
+Sample 46 time: 102 milliseconds
+Sample 47 time: 95 milliseconds
+Sample 48 time: 101 milliseconds
+Sample 49 time: 95 milliseconds
+Sample 50 time: 101 milliseconds
+Sample 51 time: 99 milliseconds
+Sample 52 time: 100 milliseconds
+Sample 53 time: 106 milliseconds
+Sample 54 time: 99 milliseconds
+Sample 55 time: 96 milliseconds
+Sample 56 time: 97 milliseconds
+Sample 57 time: 104 milliseconds
+Sample 58 time: 100 milliseconds
+Sample 59 time: 99 milliseconds
+Sample 60 time: 93 milliseconds
+Sample 61 time: 100 milliseconds
+Sample 62 time: 100 milliseconds
+Sample 63 time: 102 milliseconds
+Sample 64 time: 97 milliseconds

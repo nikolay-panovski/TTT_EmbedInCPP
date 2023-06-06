@@ -12,8 +12,9 @@ void Test2::Run(lua_State* lua) {
 	while (lua_isnil(lua, -1) == 0)
 	{
 		/**
-		lua_getglobal(lua, "isThisNil");	// returns a TYPE
-		int isNil = lua_isnil(lua, -1);		// this line NOT to be confused with lua_isnil(lua, lua_getglobal(lua, "isThisNil")); !!
+		lua_getglobal(lua, "isThisNil");	// returns a TYPE (as int). the effective result of the operation is the global being pushed on the STACK,
+											// so it cannot be obtained from this return value.
+		int isNil = lua_isnil(lua, -1);		// AKA: this line to the left is NOT equivalent to faulty "lua_isnil(lua, lua_getglobal(lua, "isThisNil"));" !!
 		printf_s("%i \n", isNil);
 		lua_pop(lua, 1);
 		/**/

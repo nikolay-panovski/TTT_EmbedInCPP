@@ -119,13 +119,13 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>D:\Tools_work\Term2_3\Advanced Tools\TTT_EmbedInCPP\TTT_EmbedInCPP\duktape-2.7.0\src;D:\Tools_work\Term2_3\Advanced Tools\TTT_EmbedInCPP\TTT_EmbedInCPP\lua-5.4.2_Win64_dll16_lib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>"D:\Tools_work\Term2_3\Advanced Tools\TTT_EmbedInCPP\TTT_EmbedInCPP\duktape-2.7.0\src";"D:\Tools_work\Term2_3\Advanced Tools\TTT_EmbedInCPP\TTT_EmbedInCPP\lua-5.4.2_Win64_dll16_lib\include";%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>D:\Tools_work\Term2_3\Advanced Tools\TTT_EmbedInCPP\TTT_EmbedInCPP\lua-5.4.2_Win64_dll16_lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>lua54.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>D:\Tools_work\Term2_3\Advanced Tools\TTT_EmbedInCPP\TTT_EmbedInCPP\duktape-2.7.0;D:\Tools_work\Term2_3\Advanced Tools\TTT_EmbedInCPP\TTT_EmbedInCPP\lua-5.4.2_Win64_dll16_lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>DuktapeTest.lib;lua54.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">

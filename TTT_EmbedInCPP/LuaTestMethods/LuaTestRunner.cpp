@@ -1,3 +1,7 @@
+//#define MEASURE_RUN
+#define MEASURE_SAMPLE
+//#define MEASURE_DEBUG_PRINT
+
 #include "LuaTestRunner.h"
 
 LuaTestRunner::LuaTestRunner(const char* luaFilename, const char* measureStoreFilename,
@@ -38,17 +42,22 @@ void LuaTestRunner::RunWithMeasurements(const char* fileToWriteIn,
 		high_resolution_clock::time_point sampleStart = high_resolution_clock::now();
 
 		for (int i = 1; i <= runsPerSample; i++) {
+			#ifdef MEASURE_RUN
 			high_resolution_clock::time_point runStart = high_resolution_clock::now();
 			runMethod.Run(lua);
 			high_resolution_clock::time_point runEnd = high_resolution_clock::now();
 			LuaTestRunner::MeasureTime(runStart, runEnd, "\t\tRun");	// string in simple form to avoid throttle via many string conversions
+			#else
+			runMethod.Run(lua);
+			#endif
 		}
 
 		high_resolution_clock::time_point sampleEnd = high_resolution_clock::now();
+		#ifdef MEASURE_SAMPLE
 		long long sampleTime = LuaTestRunner::MeasureTime(sampleStart, sampleEnd, "\tSample");
 
 		// TODO: Export (write to file) time info from runs/samples automatically
-		sampleTimeWriter << "Sample "  << i << " time: " << sampleTime << " milliseconds" << "\n";
+		#endif
 	}
 
 	sampleTimeWriter.close();
@@ -59,10 +68,12 @@ long long LuaTestRunner::MeasureTime(high_resolution_clock::time_point start, hi
 	microseconds time_span_micro = duration_cast<microseconds>(end - start);
 	milliseconds time_span_milli = duration_cast<milliseconds>(end - start);
 	seconds time_span_seconds = duration_cast<seconds>(end - start);
+	#ifdef MEASURE_DEBUG_PRINT
 	printf_s("%s took %I64i nanoseconds.\n", scope.c_str(), time_span_nano.count());
 	printf_s("%s took %I64i microseconds.\n", scope.c_str(), time_span_micro.count());
 	printf_s("            aka %I64i milliseconds.\n", time_span_milli.count());
 	printf_s("            aka %I64i seconds.\n", time_span_seconds.count());
+	#endif
 
 	return time_span_milli.count();
 }

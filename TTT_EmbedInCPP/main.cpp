@@ -1,3 +1,5 @@
+//#define MEASURE_PROGRAM
+
 #pragma once
 
 #include <iostream>
@@ -42,11 +44,12 @@ int main(int argc, char* argv[]) {
 	// SECTION: Final tests (via class instances above + TestRunners below).
 	LuaTestRunner luaTestRunner("LuaTestMethods/overwritevar_lua.lua", "Measures/test1_var_lua.csv", test1_var_lua, 1000, 60, false);
 	//JSTestRunner jsTestRunner();
-	/**/
 
 	high_resolution_clock::time_point end = high_resolution_clock::now();
 
+	#ifdef MEASURE_PROGRAM
 	LuaTestRunner::MeasureTime(start, end, "Complete execution");
+	#endif
 
 	printf_s("Exiting functional method.\n");
 

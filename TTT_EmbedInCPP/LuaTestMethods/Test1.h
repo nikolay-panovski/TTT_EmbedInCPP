@@ -1,8 +1,8 @@
 #pragma once
 
-#include "TestMethod.h"
+#include "LuaTestMethod.h"
 
-class Test1 : public TestMethod
+class Test1 : public LuaTestMethod
 {
 	private:
 		int sumWithLua(int luaNumber, int cppNumber);

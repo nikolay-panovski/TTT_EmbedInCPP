@@ -25,7 +25,7 @@
     <ClCompile Include="LuaTestMethods\Test1.cpp">
       <Filter>Source Files\Initial Tests\Test Methods</Filter>
     </ClCompile>
-    <ClCompile Include="LuaTestMethods\TestMethod.cpp">
+    <ClCompile Include="LuaTestMethods\LuaTestMethod.cpp">
       <Filter>Source Files\Initial Tests</Filter>
     </ClCompile>
     <ClCompile Include="LuaTestMethods\LuaTestRunner.cpp">
@@ -39,6 +39,12 @@
     </ClCompile>
     <ClCompile Include="LuaTestMethods\ReadString.cpp">
       <Filter>Source Files\Performance Tests Lua</Filter>
+    </ClCompile>
+    <ClCompile Include="JSTestMethods\JSTestRunner.cpp">
+      <Filter>Source Files\Initial Tests</Filter>
+    </ClCompile>
+    <ClCompile Include="JSTestMethods\JSTestMethod.cpp">
+      <Filter>Source Files\Initial Tests</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -65,7 +71,7 @@
     <ClInclude Include="LuaTestMethods\Test1.h">
       <Filter>Source Files\Initial Tests\Test Methods</Filter>
     </ClInclude>
-    <ClInclude Include="LuaTestMethods\TestMethod.h">
+    <ClInclude Include="LuaTestMethods\LuaTestMethod.h">
       <Filter>Source Files\Initial Tests</Filter>
     </ClInclude>
     <ClInclude Include="LuaTestMethods\LuaTestRunner.h">
@@ -79,6 +85,12 @@
     </ClInclude>
     <ClInclude Include="LuaTestMethods\ReadString.h">
       <Filter>Source Files\Performance Tests Lua</Filter>
+    </ClInclude>
+    <ClInclude Include="JSTestMethods\JSTestRunner.h">
+      <Filter>Source Files\Initial Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="JSTestMethods\JSTestMethod.h">
+      <Filter>Source Files\Initial Tests</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

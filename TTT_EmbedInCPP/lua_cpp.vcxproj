@@ -145,12 +145,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="JSTestMethods\JSTestMethod.cpp" />
+    <ClCompile Include="JSTestMethods\JSTestRunner.cpp" />
     <ClCompile Include="LuaTestMethods\ReadNumber.cpp" />
     <ClCompile Include="LuaTestMethods\ReadString.cpp" />
     <ClCompile Include="LuaTestMethods\Test0.cpp" />
     <ClCompile Include="LuaTestMethods\Test1.cpp" />
     <ClCompile Include="LuaTestMethods\Test2.cpp" />
-    <ClCompile Include="LuaTestMethods\TestMethod.cpp" />
+    <ClCompile Include="LuaTestMethods\LuaTestMethod.cpp" />
     <ClCompile Include="LuaTestMethods\LuaTestRunner.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
@@ -162,12 +164,14 @@
     <None Include="readInCPP_simple_string.lua" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="JSTestMethods\JSTestMethod.h" />
+    <ClInclude Include="JSTestMethods\JSTestRunner.h" />
     <ClInclude Include="LuaTestMethods\ReadNumber.h" />
     <ClInclude Include="LuaTestMethods\ReadString.h" />
     <ClInclude Include="LuaTestMethods\Test0.h" />
     <ClInclude Include="LuaTestMethods\Test1.h" />
     <ClInclude Include="LuaTestMethods\Test2.h" />
-    <ClInclude Include="LuaTestMethods\TestMethod.h" />
+    <ClInclude Include="LuaTestMethods\LuaTestMethod.h" />
     <ClInclude Include="LuaTestMethods\LuaTestRunner.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

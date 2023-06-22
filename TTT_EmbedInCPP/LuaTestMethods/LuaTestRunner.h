@@ -7,7 +7,7 @@
 
 #include <chrono>
 
-#include "TestMethod.h"
+#include "LuaTestMethod.h"
 
 using namespace std::chrono;
 
@@ -18,11 +18,11 @@ class LuaTestRunner
 
 	private:
 		void RunWithMeasurements(const char* fileToWriteIn, 
-								 TestMethod& runMethod, int sampleCount = 1, int runsPerSample = 1);
+								 LuaTestMethod& runMethod, int sampleCount = 1, int runsPerSample = 1);
 
 	public: 
 		LuaTestRunner(const char* luaFilename, const char* measureStoreFilename, 
-				   TestMethod& runMethod, int sampleCount = 1, int runsPerSample = 1, bool printError = true);
+				   LuaTestMethod& runMethod, int sampleCount = 1, int runsPerSample = 1, bool printError = true);
 		~LuaTestRunner();
 
 		// Measure time in different units and return a measurement (default is milliseconds).

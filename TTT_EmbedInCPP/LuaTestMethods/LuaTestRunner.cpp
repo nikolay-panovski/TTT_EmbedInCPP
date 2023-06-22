@@ -1,7 +1,7 @@
 #include "LuaTestRunner.h"
 
 LuaTestRunner::LuaTestRunner(const char* luaFilename, const char* measureStoreFilename,
-					   TestMethod& runMethod, int sampleCount, int runsPerSample, bool printError) {
+					   LuaTestMethod& runMethod, int sampleCount, int runsPerSample, bool printError) {
 	this->lua = luaL_newstate();
 	luaL_openlibs(lua);
 
@@ -30,7 +30,7 @@ LuaTestRunner::LuaTestRunner(const char* luaFilename, const char* measureStoreFi
 }
 
 void LuaTestRunner::RunWithMeasurements(const char* fileToWriteIn,
-									 TestMethod& runMethod, int sampleCount, int runsPerSample) {
+									 LuaTestMethod& runMethod, int sampleCount, int runsPerSample) {
 	std::ofstream sampleTimeWriter;
 	sampleTimeWriter.open(fileToWriteIn);
 

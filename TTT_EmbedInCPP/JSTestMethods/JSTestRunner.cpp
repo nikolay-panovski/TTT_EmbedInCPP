@@ -2,14 +2,14 @@
 
 /* https://github.com/svaarala/duktape/blob/master/examples/guide/processlines.c
  * Helper function to process .js input files (not included in default Duktape for minimalism, not yet included in extras).
- * "For brevity assumes a maximum file length of 16kB."
+ * "For brevity assumes a maximum file length of 16kB." (edited to 8kB for Windows stack warning reasons)
  */
 static void push_file_as_string(duk_context* ctx, const char* filename) {
 	FILE* f;
 	size_t len;
-	char buf[16384];
+	char buf[8192];
 
-	f = fopen(filename, "rb");
+	fopen_s(&f, filename, "rb");	// potentially returns an error code, but I will not check for it, assuming well-formed files in the test context
 	if (f) {
 		len = fread((void*)buf, 1, sizeof(buf), f);
 		fclose(f);
@@ -22,7 +22,7 @@ static void push_file_as_string(duk_context* ctx, const char* filename) {
 
 
 JSTestRunner::JSTestRunner(const char* JSFilename, const char* measureStoreFilename,
-	TestMethod& runMethod, int sampleCount, int runsPerSample, bool printError) {
+	JSTestMethod& runMethod, int sampleCount, int runsPerSample, bool printError) {
 	this->duk = duk_create_heap_default();
 
 	if (!duk) {
@@ -57,7 +57,7 @@ JSTestRunner::JSTestRunner(const char* JSFilename, const char* measureStoreFilen
 }
 
 void JSTestRunner::RunWithMeasurements(const char* fileToWriteIn,
-	TestMethod& runMethod, int sampleCount, int runsPerSample) {
+	JSTestMethod& runMethod, int sampleCount, int runsPerSample) {
 	std::ofstream sampleTimeWriter;
 	sampleTimeWriter.open(fileToWriteIn);
 

@@ -151,7 +151,7 @@
     <ClCompile Include="LuaTestMethods\Test1.cpp" />
     <ClCompile Include="LuaTestMethods\Test2.cpp" />
     <ClCompile Include="LuaTestMethods\TestMethod.cpp" />
-    <ClCompile Include="LuaTestMethods\TestRunner.cpp" />
+    <ClCompile Include="LuaTestMethods\LuaTestRunner.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -168,7 +168,7 @@
     <ClInclude Include="LuaTestMethods\Test1.h" />
     <ClInclude Include="LuaTestMethods\Test2.h" />
     <ClInclude Include="LuaTestMethods\TestMethod.h" />
-    <ClInclude Include="LuaTestMethods\TestRunner.h" />
+    <ClInclude Include="LuaTestMethods\LuaTestRunner.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

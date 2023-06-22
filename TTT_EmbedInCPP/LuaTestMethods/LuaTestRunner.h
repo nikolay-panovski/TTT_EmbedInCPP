@@ -11,7 +11,7 @@
 
 using namespace std::chrono;
 
-class TestRunner
+class LuaTestRunner
 {
 	private:
 		lua_State* lua;
@@ -21,9 +21,9 @@ class TestRunner
 								 TestMethod& runMethod, int sampleCount = 1, int runsPerSample = 1);
 
 	public: 
-		TestRunner(const char* luaFilename, const char* measureStoreFilename, 
+		LuaTestRunner(const char* luaFilename, const char* measureStoreFilename, 
 				   TestMethod& runMethod, int sampleCount = 1, int runsPerSample = 1, bool printError = true);
-		~TestRunner();
+		~LuaTestRunner();
 
 		// Measure time in different units and return a measurement (default is milliseconds).
 		static long long MeasureTime(high_resolution_clock::time_point start, high_resolution_clock::time_point end, std::string scope = "");

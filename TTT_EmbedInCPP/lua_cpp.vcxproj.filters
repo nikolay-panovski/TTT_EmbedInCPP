@@ -28,7 +28,7 @@
     <ClCompile Include="LuaTestMethods\TestMethod.cpp">
       <Filter>Source Files\Initial Tests</Filter>
     </ClCompile>
-    <ClCompile Include="LuaTestMethods\TestRunner.cpp">
+    <ClCompile Include="LuaTestMethods\LuaTestRunner.cpp">
       <Filter>Source Files\Initial Tests</Filter>
     </ClCompile>
     <ClCompile Include="LuaTestMethods\Test2.cpp">
@@ -68,7 +68,7 @@
     <ClInclude Include="LuaTestMethods\TestMethod.h">
       <Filter>Source Files\Initial Tests</Filter>
     </ClInclude>
-    <ClInclude Include="LuaTestMethods\TestRunner.h">
+    <ClInclude Include="LuaTestMethods\LuaTestRunner.h">
       <Filter>Source Files\Initial Tests</Filter>
     </ClInclude>
     <ClInclude Include="LuaTestMethods\Test2.h">

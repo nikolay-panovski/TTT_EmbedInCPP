@@ -6,7 +6,7 @@
 
 #include <chrono>
 
-#include "LuaTestMethods/TestRunner.h"
+#include "LuaTestMethods/LuaTestRunner.h"
 
 #include "LuaTestMethods/Test0.h"
 #include "LuaTestMethods/Test1.h"
@@ -45,12 +45,12 @@ int main(int argc, char* argv[]) {
 	
 	// SECTION: Final Lua tests (via class instances + TestRunner).
 	//TestRunner testRunner("readInCPP_simple_number.lua", "Measures/lua_read_number.txt", readNumber, 64, 1024, false);
-	TestRunner testRunner("readInCPP_simple_string.lua", "Measures/lua_read_string.txt", readString, 64, 1024, false);
+	LuaTestRunner testRunner("readInCPP_simple_string.lua", "Measures/lua_read_string.txt", readString, 64, 1024, false);
 	/**/
 
 	high_resolution_clock::time_point end = high_resolution_clock::now();
 
-	TestRunner::MeasureTime(start, end, "Complete execution");
+	LuaTestRunner::MeasureTime(start, end, "Complete execution");
 
 	printf_s("Exiting functional method.\n");
 

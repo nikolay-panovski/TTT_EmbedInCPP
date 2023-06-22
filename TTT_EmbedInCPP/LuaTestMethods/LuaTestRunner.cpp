@@ -1,6 +1,6 @@
-#include "TestRunner.h"
+#include "LuaTestRunner.h"
 
-TestRunner::TestRunner(const char* luaFilename, const char* measureStoreFilename,
+LuaTestRunner::LuaTestRunner(const char* luaFilename, const char* measureStoreFilename,
 					   TestMethod& runMethod, int sampleCount, int runsPerSample, bool printError) {
 	this->lua = luaL_newstate();
 	luaL_openlibs(lua);
@@ -29,7 +29,7 @@ TestRunner::TestRunner(const char* luaFilename, const char* measureStoreFilename
 	lua_close(lua);
 }
 
-void TestRunner::RunWithMeasurements(const char* fileToWriteIn,
+void LuaTestRunner::RunWithMeasurements(const char* fileToWriteIn,
 									 TestMethod& runMethod, int sampleCount, int runsPerSample) {
 	std::ofstream sampleTimeWriter;
 	sampleTimeWriter.open(fileToWriteIn);
@@ -41,11 +41,11 @@ void TestRunner::RunWithMeasurements(const char* fileToWriteIn,
 			high_resolution_clock::time_point runStart = high_resolution_clock::now();
 			runMethod.Run(lua);
 			high_resolution_clock::time_point runEnd = high_resolution_clock::now();
-			TestRunner::MeasureTime(runStart, runEnd, "\t\tRun");	// string in simple form to avoid throttle via many string conversions
+			LuaTestRunner::MeasureTime(runStart, runEnd, "\t\tRun");	// string in simple form to avoid throttle via many string conversions
 		}
 
 		high_resolution_clock::time_point sampleEnd = high_resolution_clock::now();
-		long long sampleTime = TestRunner::MeasureTime(sampleStart, sampleEnd, "\tSample");
+		long long sampleTime = LuaTestRunner::MeasureTime(sampleStart, sampleEnd, "\tSample");
 
 		// TODO: Export (write to file) time info from runs/samples automatically
 		sampleTimeWriter << "Sample "  << i << " time: " << sampleTime << " milliseconds" << "\n";
@@ -54,7 +54,7 @@ void TestRunner::RunWithMeasurements(const char* fileToWriteIn,
 	sampleTimeWriter.close();
 }
 
-long long TestRunner::MeasureTime(high_resolution_clock::time_point start, high_resolution_clock::time_point end, std::string scope) {
+long long LuaTestRunner::MeasureTime(high_resolution_clock::time_point start, high_resolution_clock::time_point end, std::string scope) {
 	nanoseconds time_span_nano = duration_cast<nanoseconds>(end - start);
 	microseconds time_span_micro = duration_cast<microseconds>(end - start);
 	milliseconds time_span_milli = duration_cast<milliseconds>(end - start);
@@ -67,6 +67,6 @@ long long TestRunner::MeasureTime(high_resolution_clock::time_point start, high_
 	return time_span_milli.count();
 }
 
-TestRunner::~TestRunner() {
+LuaTestRunner::~LuaTestRunner() {
 	printf_s("TestRunner destroyed. Tests ending. \n");
 }

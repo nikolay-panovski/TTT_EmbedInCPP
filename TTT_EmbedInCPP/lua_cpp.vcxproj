@@ -145,8 +145,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Entities\Item.cpp" />
+    <ClCompile Include="Entities\Player.cpp" />
     <ClCompile Include="JSTestMethods\JSTestMethod.cpp" />
     <ClCompile Include="JSTestMethods\JSTestRunner.cpp" />
+    <ClCompile Include="LuaTestMethods\OverwritePlayerVar_LuaToCPP.cpp" />
     <ClCompile Include="LuaTestMethods\ReadNumber.cpp" />
     <ClCompile Include="LuaTestMethods\ReadString.cpp" />
     <ClCompile Include="LuaTestMethods\Test0.cpp" />
@@ -160,12 +163,17 @@
     <None Include="array_print.lua" />
     <None Include="crossglobal.lua" />
     <None Include="helloworld.lua" />
+    <None Include="LuaTestMethods\overwritevar_lua.lua" />
     <None Include="readInCPP_simple_number.lua" />
     <None Include="readInCPP_simple_string.lua" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Entities\Item.h" />
+    <ClInclude Include="Entities\ItemStorage.h" />
+    <ClInclude Include="Entities\Player.h" />
     <ClInclude Include="JSTestMethods\JSTestMethod.h" />
     <ClInclude Include="JSTestMethods\JSTestRunner.h" />
+    <ClInclude Include="LuaTestMethods\OverwritePlayerVar_LuaToCPP.h" />
     <ClInclude Include="LuaTestMethods\ReadNumber.h" />
     <ClInclude Include="LuaTestMethods\ReadString.h" />
     <ClInclude Include="LuaTestMethods\Test0.h" />

@@ -14,6 +14,12 @@
     <Filter Include="Source Files\Performance Tests Lua">
       <UniqueIdentifier>{1f293f3c-dae0-4eb7-97aa-55819e9e60f8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Entity Simulations">
+      <UniqueIdentifier>{fb599376-805e-4045-9faf-3c2832a175e2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Entity Tests">
+      <UniqueIdentifier>{b316a993-39a0-414c-80b5-faa79f908415}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -46,6 +52,15 @@
     <ClCompile Include="JSTestMethods\JSTestMethod.cpp">
       <Filter>Source Files\Initial Tests</Filter>
     </ClCompile>
+    <ClCompile Include="Entities\Player.cpp">
+      <Filter>Source Files\Entity Simulations</Filter>
+    </ClCompile>
+    <ClCompile Include="Entities\Item.cpp">
+      <Filter>Source Files\Entity Simulations</Filter>
+    </ClCompile>
+    <ClCompile Include="LuaTestMethods\OverwritePlayerVar_LuaToCPP.cpp">
+      <Filter>Source Files\Entity Tests</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="helloworld.lua">
@@ -61,6 +76,9 @@
       <Filter>Source Files</Filter>
     </None>
     <None Include="readInCPP_simple_string.lua">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="LuaTestMethods\overwritevar_lua.lua">
       <Filter>Source Files</Filter>
     </None>
   </ItemGroup>
@@ -91,6 +109,18 @@
     </ClInclude>
     <ClInclude Include="JSTestMethods\JSTestMethod.h">
       <Filter>Source Files\Initial Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="Entities\Player.h">
+      <Filter>Source Files\Entity Simulations</Filter>
+    </ClInclude>
+    <ClInclude Include="Entities\Item.h">
+      <Filter>Source Files\Entity Simulations</Filter>
+    </ClInclude>
+    <ClInclude Include="Entities\ItemStorage.h">
+      <Filter>Source Files\Entity Simulations</Filter>
+    </ClInclude>
+    <ClInclude Include="LuaTestMethods\OverwritePlayerVar_LuaToCPP.h">
+      <Filter>Source Files\Entity Tests</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

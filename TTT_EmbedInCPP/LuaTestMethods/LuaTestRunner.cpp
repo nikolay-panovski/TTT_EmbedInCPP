@@ -38,9 +38,9 @@ void LuaTestRunner::RunWithMeasurements(const char* fileToWriteIn,
 	std::ofstream sampleTimeWriter;
 	sampleTimeWriter.open(fileToWriteIn);
 
+	sampleTimeWriter << "Sample,Time " << "\n";
 	for (int i = 1; i <= sampleCount; i++) {
 		high_resolution_clock::time_point sampleStart = high_resolution_clock::now();
-
 		for (int i = 1; i <= runsPerSample; i++) {
 			#ifdef MEASURE_RUN
 			high_resolution_clock::time_point runStart = high_resolution_clock::now();
@@ -56,7 +56,7 @@ void LuaTestRunner::RunWithMeasurements(const char* fileToWriteIn,
 		#ifdef MEASURE_SAMPLE
 		long long sampleTime = LuaTestRunner::MeasureTime(sampleStart, sampleEnd, "\tSample");
 
-		// TODO: Export (write to file) time info from runs/samples automatically
+		sampleTimeWriter << i << "," << sampleTime << "\n";
 		#endif
 	}
 

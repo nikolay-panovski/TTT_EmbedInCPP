@@ -2,6 +2,11 @@
 #define MEASURE_SAMPLE
 //#define MEASURE_DEBUG_PRINT
 
+#pragma once
+
+//#include <Windows.h>
+//#include <Psapi.h>
+
 #include "LuaTestRunner.h"
 
 LuaTestRunner::LuaTestRunner(const char* luaFilename, const char* measureStoreFilename,
@@ -38,7 +43,7 @@ void LuaTestRunner::RunWithMeasurements(const char* fileToWriteIn,
 	std::ofstream sampleTimeWriter;
 	sampleTimeWriter.open(fileToWriteIn);
 
-	sampleTimeWriter << "Sample,Time " << "\n";
+	sampleTimeWriter << "Sample,Time" << "\n";
 	for (int i = 1; i <= sampleCount; i++) {
 		high_resolution_clock::time_point sampleStart = high_resolution_clock::now();
 		for (int i = 1; i <= runsPerSample; i++) {
@@ -53,10 +58,14 @@ void LuaTestRunner::RunWithMeasurements(const char* fileToWriteIn,
 		}
 
 		high_resolution_clock::time_point sampleEnd = high_resolution_clock::now();
+
 		#ifdef MEASURE_SAMPLE
 		long long sampleTime = LuaTestRunner::MeasureTime(sampleStart, sampleEnd, "\tSample");
 
-		sampleTimeWriter << i << "," << sampleTime << "\n";
+		//PROCESS_MEMORY_COUNTERS counters;
+		//GetProcessMemoryInfo(GetCurrentProcess(), &counters, sizeof(counters));
+
+		sampleTimeWriter << i << "," << sampleTime /* << "," << counters.WorkingSetSize*/ << "\n";
 		#endif
 	}
 
@@ -75,7 +84,7 @@ long long LuaTestRunner::MeasureTime(high_resolution_clock::time_point start, hi
 	printf_s("            aka %I64i seconds.\n", time_span_seconds.count());
 	#endif
 
-	return time_span_milli.count();
+	return time_span_nano.count();
 }
 
 LuaTestRunner::~LuaTestRunner() {

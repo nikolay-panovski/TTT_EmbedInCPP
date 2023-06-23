@@ -4,7 +4,7 @@
 #include <iostream>
 #include <string>
 
-class TestMethod
+class LuaTestMethod
 {
 	public:
 		virtual void Run(lua_State* lua) = 0;

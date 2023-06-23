@@ -119,13 +119,13 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>"D:\Tools_work\Term2_3\Advanced Tools\TTT_EmbedInCPP\TTT_EmbedInCPP\lua-5.4.2_Win64_dll16_lib\include";%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>"D:\Tools_work\Term2_3\Advanced Tools\TTT_EmbedInCPP\TTT_EmbedInCPP\duktape-2.7.0\src";"D:\Tools_work\Term2_3\Advanced Tools\TTT_EmbedInCPP\TTT_EmbedInCPP\lua-5.4.2_Win64_dll16_lib\include";%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>"D:\Tools_work\Term2_3\Advanced Tools\TTT_EmbedInCPP\TTT_EmbedInCPP\lua-5.4.2_Win64_dll16_lib";%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>lua54.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>D:\Tools_work\Term2_3\Advanced Tools\TTT_EmbedInCPP\TTT_EmbedInCPP\duktape-2.7.0;D:\Tools_work\Term2_3\Advanced Tools\TTT_EmbedInCPP\TTT_EmbedInCPP\lua-5.4.2_Win64_dll16_lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>DuktapeTest.lib;lua54.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -145,30 +145,60 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Entities\Item.cpp" />
+    <ClCompile Include="Entities\Player.cpp" />
+    <ClCompile Include="JSTestMethods\ChangePlayerStats_JSToCPP.cpp" />
+    <ClCompile Include="JSTestMethods\JSTestMethod.cpp" />
+    <ClCompile Include="JSTestMethods\JSTestRunner.cpp" />
+    <ClCompile Include="JSTestMethods\OverwritePlayerVar_JSToCPP.cpp" />
+    <ClCompile Include="JSTestMethods\ReadPlayerVar_JSToCPP.cpp" />
+    <ClCompile Include="LuaTestMethods\ChangePlayerStats_LuaToCPP.cpp" />
+    <ClCompile Include="LuaTestMethods\InsertItem_LuaToCPP.cpp" />
+    <ClCompile Include="LuaTestMethods\OverwritePlayerVar_LuaToCPP.cpp" />
     <ClCompile Include="LuaTestMethods\ReadNumber.cpp" />
+    <ClCompile Include="LuaTestMethods\ReadPlayerVar_LuaToCPP.cpp" />
     <ClCompile Include="LuaTestMethods\ReadString.cpp" />
     <ClCompile Include="LuaTestMethods\Test0.cpp" />
     <ClCompile Include="LuaTestMethods\Test1.cpp" />
     <ClCompile Include="LuaTestMethods\Test2.cpp" />
-    <ClCompile Include="LuaTestMethods\TestMethod.cpp" />
-    <ClCompile Include="LuaTestMethods\TestRunner.cpp" />
+    <ClCompile Include="LuaTestMethods\LuaTestMethod.cpp" />
+    <ClCompile Include="LuaTestMethods\LuaTestRunner.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="array_print.lua" />
     <None Include="crossglobal.lua" />
     <None Include="helloworld.lua" />
+    <None Include="JSTestMethods\changestats_js.js" />
+    <None Include="JSTestMethods\overwritevar_js.js" />
+    <None Include="JSTestMethods\readvar_js.js" />
+    <None Include="LuaTestMethods\changestats_lua.lua" />
+    <None Include="LuaTestMethods\itemtoinsert.lua" />
+    <None Include="LuaTestMethods\overwritevar_lua.lua" />
+    <None Include="LuaTestMethods\readvar_lua.lua" />
     <None Include="readInCPP_simple_number.lua" />
     <None Include="readInCPP_simple_string.lua" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Entities\Item.h" />
+    <ClInclude Include="Entities\ItemStorage.h" />
+    <ClInclude Include="Entities\Player.h" />
+    <ClInclude Include="JSTestMethods\ChangePlayerStats_JSToCPP.h" />
+    <ClInclude Include="JSTestMethods\JSTestMethod.h" />
+    <ClInclude Include="JSTestMethods\JSTestRunner.h" />
+    <ClInclude Include="JSTestMethods\OverwritePlayerVar_JSToCPP.h" />
+    <ClInclude Include="JSTestMethods\ReadPlayerVar_JSToCPP.h" />
+    <ClInclude Include="LuaTestMethods\ChangePlayerStats_LuaToCPP.h" />
+    <ClInclude Include="LuaTestMethods\InsertItem_LuaToCPP.h" />
+    <ClInclude Include="LuaTestMethods\OverwritePlayerVar_LuaToCPP.h" />
     <ClInclude Include="LuaTestMethods\ReadNumber.h" />
+    <ClInclude Include="LuaTestMethods\ReadPlayerVar_LuaToCPP.h" />
     <ClInclude Include="LuaTestMethods\ReadString.h" />
     <ClInclude Include="LuaTestMethods\Test0.h" />
     <ClInclude Include="LuaTestMethods\Test1.h" />
     <ClInclude Include="LuaTestMethods\Test2.h" />
-    <ClInclude Include="LuaTestMethods\TestMethod.h" />
-    <ClInclude Include="LuaTestMethods\TestRunner.h" />
+    <ClInclude Include="LuaTestMethods\LuaTestMethod.h" />
+    <ClInclude Include="LuaTestMethods\LuaTestRunner.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

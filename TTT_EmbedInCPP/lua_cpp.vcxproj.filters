@@ -14,6 +14,12 @@
     <Filter Include="Source Files\Performance Tests Lua">
       <UniqueIdentifier>{1f293f3c-dae0-4eb7-97aa-55819e9e60f8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Entity Simulations">
+      <UniqueIdentifier>{fb599376-805e-4045-9faf-3c2832a175e2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Entity Tests">
+      <UniqueIdentifier>{b316a993-39a0-414c-80b5-faa79f908415}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -25,10 +31,10 @@
     <ClCompile Include="LuaTestMethods\Test1.cpp">
       <Filter>Source Files\Initial Tests\Test Methods</Filter>
     </ClCompile>
-    <ClCompile Include="LuaTestMethods\TestMethod.cpp">
+    <ClCompile Include="LuaTestMethods\LuaTestMethod.cpp">
       <Filter>Source Files\Initial Tests</Filter>
     </ClCompile>
-    <ClCompile Include="LuaTestMethods\TestRunner.cpp">
+    <ClCompile Include="LuaTestMethods\LuaTestRunner.cpp">
       <Filter>Source Files\Initial Tests</Filter>
     </ClCompile>
     <ClCompile Include="LuaTestMethods\Test2.cpp">
@@ -39,6 +45,39 @@
     </ClCompile>
     <ClCompile Include="LuaTestMethods\ReadString.cpp">
       <Filter>Source Files\Performance Tests Lua</Filter>
+    </ClCompile>
+    <ClCompile Include="JSTestMethods\JSTestRunner.cpp">
+      <Filter>Source Files\Initial Tests</Filter>
+    </ClCompile>
+    <ClCompile Include="JSTestMethods\JSTestMethod.cpp">
+      <Filter>Source Files\Initial Tests</Filter>
+    </ClCompile>
+    <ClCompile Include="Entities\Player.cpp">
+      <Filter>Source Files\Entity Simulations</Filter>
+    </ClCompile>
+    <ClCompile Include="Entities\Item.cpp">
+      <Filter>Source Files\Entity Simulations</Filter>
+    </ClCompile>
+    <ClCompile Include="LuaTestMethods\OverwritePlayerVar_LuaToCPP.cpp">
+      <Filter>Source Files\Entity Tests</Filter>
+    </ClCompile>
+    <ClCompile Include="JSTestMethods\OverwritePlayerVar_JSToCPP.cpp">
+      <Filter>Source Files\Entity Tests</Filter>
+    </ClCompile>
+    <ClCompile Include="LuaTestMethods\ReadPlayerVar_LuaToCPP.cpp">
+      <Filter>Source Files\Entity Tests</Filter>
+    </ClCompile>
+    <ClCompile Include="JSTestMethods\ReadPlayerVar_JSToCPP.cpp">
+      <Filter>Source Files\Entity Tests</Filter>
+    </ClCompile>
+    <ClCompile Include="JSTestMethods\ChangePlayerStats_JSToCPP.cpp">
+      <Filter>Source Files\Entity Tests</Filter>
+    </ClCompile>
+    <ClCompile Include="LuaTestMethods\ChangePlayerStats_LuaToCPP.cpp">
+      <Filter>Source Files\Entity Tests</Filter>
+    </ClCompile>
+    <ClCompile Include="LuaTestMethods\InsertItem_LuaToCPP.cpp">
+      <Filter>Source Files\Entity Tests</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -57,6 +96,27 @@
     <None Include="readInCPP_simple_string.lua">
       <Filter>Source Files</Filter>
     </None>
+    <None Include="LuaTestMethods\overwritevar_lua.lua">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="JSTestMethods\overwritevar_js.js">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="LuaTestMethods\readvar_lua.lua">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="JSTestMethods\readvar_js.js">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="LuaTestMethods\changestats_lua.lua">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="JSTestMethods\changestats_js.js">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="LuaTestMethods\itemtoinsert.lua">
+      <Filter>Source Files</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="LuaTestMethods\Test0.h">
@@ -65,10 +125,10 @@
     <ClInclude Include="LuaTestMethods\Test1.h">
       <Filter>Source Files\Initial Tests\Test Methods</Filter>
     </ClInclude>
-    <ClInclude Include="LuaTestMethods\TestMethod.h">
+    <ClInclude Include="LuaTestMethods\LuaTestMethod.h">
       <Filter>Source Files\Initial Tests</Filter>
     </ClInclude>
-    <ClInclude Include="LuaTestMethods\TestRunner.h">
+    <ClInclude Include="LuaTestMethods\LuaTestRunner.h">
       <Filter>Source Files\Initial Tests</Filter>
     </ClInclude>
     <ClInclude Include="LuaTestMethods\Test2.h">
@@ -79,6 +139,42 @@
     </ClInclude>
     <ClInclude Include="LuaTestMethods\ReadString.h">
       <Filter>Source Files\Performance Tests Lua</Filter>
+    </ClInclude>
+    <ClInclude Include="JSTestMethods\JSTestRunner.h">
+      <Filter>Source Files\Initial Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="JSTestMethods\JSTestMethod.h">
+      <Filter>Source Files\Initial Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="Entities\Player.h">
+      <Filter>Source Files\Entity Simulations</Filter>
+    </ClInclude>
+    <ClInclude Include="Entities\Item.h">
+      <Filter>Source Files\Entity Simulations</Filter>
+    </ClInclude>
+    <ClInclude Include="Entities\ItemStorage.h">
+      <Filter>Source Files\Entity Simulations</Filter>
+    </ClInclude>
+    <ClInclude Include="LuaTestMethods\OverwritePlayerVar_LuaToCPP.h">
+      <Filter>Source Files\Entity Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="JSTestMethods\OverwritePlayerVar_JSToCPP.h">
+      <Filter>Source Files\Entity Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="LuaTestMethods\ReadPlayerVar_LuaToCPP.h">
+      <Filter>Source Files\Entity Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="JSTestMethods\ReadPlayerVar_JSToCPP.h">
+      <Filter>Source Files\Entity Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="JSTestMethods\ChangePlayerStats_JSToCPP.h">
+      <Filter>Source Files\Entity Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="LuaTestMethods\ChangePlayerStats_LuaToCPP.h">
+      <Filter>Source Files\Entity Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="LuaTestMethods\InsertItem_LuaToCPP.h">
+      <Filter>Source Files\Entity Tests</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

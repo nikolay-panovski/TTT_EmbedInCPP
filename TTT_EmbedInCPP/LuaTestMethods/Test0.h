@@ -1,8 +1,8 @@
 #pragma once
 
-#include "TestMethod.h"
+#include "LuaTestMethod.h"
 
-class Test0 : public TestMethod
+class Test0 : public LuaTestMethod
 {
 	public:
 		void Run(lua_State* lua) override;

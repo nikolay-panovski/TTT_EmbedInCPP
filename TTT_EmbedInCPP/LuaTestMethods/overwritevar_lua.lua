@@ -1,0 +1,1 @@
+lastLevelSpecialSpawn = 0

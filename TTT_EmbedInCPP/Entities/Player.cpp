@@ -1,5 +1,9 @@
 #include "Player.h"
 
+int Player::GetHearts(void) {
+	return this->redHearts;
+}
+ 
 void Player::AddDamage(float dmg) {
 	this->damage += dmg;
 }

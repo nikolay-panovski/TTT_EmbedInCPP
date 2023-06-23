@@ -147,10 +147,16 @@
   <ItemGroup>
     <ClCompile Include="Entities\Item.cpp" />
     <ClCompile Include="Entities\Player.cpp" />
+    <ClCompile Include="JSTestMethods\ChangePlayerStats_JSToCPP.cpp" />
     <ClCompile Include="JSTestMethods\JSTestMethod.cpp" />
     <ClCompile Include="JSTestMethods\JSTestRunner.cpp" />
+    <ClCompile Include="JSTestMethods\OverwritePlayerVar_JSToCPP.cpp" />
+    <ClCompile Include="JSTestMethods\ReadPlayerVar_JSToCPP.cpp" />
+    <ClCompile Include="LuaTestMethods\ChangePlayerStats_LuaToCPP.cpp" />
+    <ClCompile Include="LuaTestMethods\InsertItem_LuaToCPP.cpp" />
     <ClCompile Include="LuaTestMethods\OverwritePlayerVar_LuaToCPP.cpp" />
     <ClCompile Include="LuaTestMethods\ReadNumber.cpp" />
+    <ClCompile Include="LuaTestMethods\ReadPlayerVar_LuaToCPP.cpp" />
     <ClCompile Include="LuaTestMethods\ReadString.cpp" />
     <ClCompile Include="LuaTestMethods\Test0.cpp" />
     <ClCompile Include="LuaTestMethods\Test1.cpp" />
@@ -163,7 +169,13 @@
     <None Include="array_print.lua" />
     <None Include="crossglobal.lua" />
     <None Include="helloworld.lua" />
+    <None Include="JSTestMethods\changestats_js.js" />
+    <None Include="JSTestMethods\overwritevar_js.js" />
+    <None Include="JSTestMethods\readvar_js.js" />
+    <None Include="LuaTestMethods\changestats_lua.lua" />
+    <None Include="LuaTestMethods\itemtoinsert.lua" />
     <None Include="LuaTestMethods\overwritevar_lua.lua" />
+    <None Include="LuaTestMethods\readvar_lua.lua" />
     <None Include="readInCPP_simple_number.lua" />
     <None Include="readInCPP_simple_string.lua" />
   </ItemGroup>
@@ -171,10 +183,16 @@
     <ClInclude Include="Entities\Item.h" />
     <ClInclude Include="Entities\ItemStorage.h" />
     <ClInclude Include="Entities\Player.h" />
+    <ClInclude Include="JSTestMethods\ChangePlayerStats_JSToCPP.h" />
     <ClInclude Include="JSTestMethods\JSTestMethod.h" />
     <ClInclude Include="JSTestMethods\JSTestRunner.h" />
+    <ClInclude Include="JSTestMethods\OverwritePlayerVar_JSToCPP.h" />
+    <ClInclude Include="JSTestMethods\ReadPlayerVar_JSToCPP.h" />
+    <ClInclude Include="LuaTestMethods\ChangePlayerStats_LuaToCPP.h" />
+    <ClInclude Include="LuaTestMethods\InsertItem_LuaToCPP.h" />
     <ClInclude Include="LuaTestMethods\OverwritePlayerVar_LuaToCPP.h" />
     <ClInclude Include="LuaTestMethods\ReadNumber.h" />
+    <ClInclude Include="LuaTestMethods\ReadPlayerVar_LuaToCPP.h" />
     <ClInclude Include="LuaTestMethods\ReadString.h" />
     <ClInclude Include="LuaTestMethods\Test0.h" />
     <ClInclude Include="LuaTestMethods\Test1.h" />

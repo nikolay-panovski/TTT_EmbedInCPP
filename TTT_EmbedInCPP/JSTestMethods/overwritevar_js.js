@@ -1,0 +1,1 @@
+var lastLevelSpecialSpawn = 0

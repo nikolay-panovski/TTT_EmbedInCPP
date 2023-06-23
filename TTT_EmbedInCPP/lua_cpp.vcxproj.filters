@@ -61,6 +61,24 @@
     <ClCompile Include="LuaTestMethods\OverwritePlayerVar_LuaToCPP.cpp">
       <Filter>Source Files\Entity Tests</Filter>
     </ClCompile>
+    <ClCompile Include="JSTestMethods\OverwritePlayerVar_JSToCPP.cpp">
+      <Filter>Source Files\Entity Tests</Filter>
+    </ClCompile>
+    <ClCompile Include="LuaTestMethods\ReadPlayerVar_LuaToCPP.cpp">
+      <Filter>Source Files\Entity Tests</Filter>
+    </ClCompile>
+    <ClCompile Include="JSTestMethods\ReadPlayerVar_JSToCPP.cpp">
+      <Filter>Source Files\Entity Tests</Filter>
+    </ClCompile>
+    <ClCompile Include="JSTestMethods\ChangePlayerStats_JSToCPP.cpp">
+      <Filter>Source Files\Entity Tests</Filter>
+    </ClCompile>
+    <ClCompile Include="LuaTestMethods\ChangePlayerStats_LuaToCPP.cpp">
+      <Filter>Source Files\Entity Tests</Filter>
+    </ClCompile>
+    <ClCompile Include="LuaTestMethods\InsertItem_LuaToCPP.cpp">
+      <Filter>Source Files\Entity Tests</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="helloworld.lua">
@@ -79,6 +97,24 @@
       <Filter>Source Files</Filter>
     </None>
     <None Include="LuaTestMethods\overwritevar_lua.lua">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="JSTestMethods\overwritevar_js.js">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="LuaTestMethods\readvar_lua.lua">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="JSTestMethods\readvar_js.js">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="LuaTestMethods\changestats_lua.lua">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="JSTestMethods\changestats_js.js">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="LuaTestMethods\itemtoinsert.lua">
       <Filter>Source Files</Filter>
     </None>
   </ItemGroup>
@@ -120,6 +156,24 @@
       <Filter>Source Files\Entity Simulations</Filter>
     </ClInclude>
     <ClInclude Include="LuaTestMethods\OverwritePlayerVar_LuaToCPP.h">
+      <Filter>Source Files\Entity Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="JSTestMethods\OverwritePlayerVar_JSToCPP.h">
+      <Filter>Source Files\Entity Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="LuaTestMethods\ReadPlayerVar_LuaToCPP.h">
+      <Filter>Source Files\Entity Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="JSTestMethods\ReadPlayerVar_JSToCPP.h">
+      <Filter>Source Files\Entity Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="JSTestMethods\ChangePlayerStats_JSToCPP.h">
+      <Filter>Source Files\Entity Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="LuaTestMethods\ChangePlayerStats_LuaToCPP.h">
+      <Filter>Source Files\Entity Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="LuaTestMethods\InsertItem_LuaToCPP.h">
       <Filter>Source Files\Entity Tests</Filter>
     </ClInclude>
   </ItemGroup>

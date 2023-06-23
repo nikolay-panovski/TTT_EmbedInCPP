@@ -10,14 +10,13 @@
 #include "LuaTestMethods/LuaTestRunner.h"
 #include "JSTestMethods/JSTestRunner.h"
 
-#include "LuaTestMethods/OverwritePlayerVar_LuaToCPP.h"
+#include "Entities/Player.h"
 
 using namespace std;
 using namespace std::chrono;
 
 int main(int argc, char* argv[]) {
-
-	// SECTION: Initial tests with Lua in C++ (structured in classes).
+	// OBSOLETE SECTION: Initial tests with Lua in C++ (structured in classes).
 	/**
 	Test0 test0;
 	Test1 test1;
@@ -26,7 +25,7 @@ int main(int argc, char* argv[]) {
 	ReadString readString;
 	/**/
 
-	OverwritePlayerVar_LuaToCPP test1_var_lua;
+	Player player;
 
 	printf_s("Entering functional method.\n");
 

@@ -6,8 +6,9 @@
 class OverwritePlayerVar_LuaToCPP : public LuaTestMethod
 {
 	private:
-		Player player;
+		Player* player;
 
 	public:
+		OverwritePlayerVar_LuaToCPP(Player* pPlayer);
 		void Run(lua_State* lua) override;
 };

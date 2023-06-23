@@ -5,8 +5,12 @@ void OverwritePlayerVar_LuaToCPP::Run(lua_State* lua) {
 
 	if (lua_isnumber(lua, -1)) {
 		int overwrittenSpawnValue = lua_tonumber(lua, -1);
-		player.lastLevelSpecialSpawn = overwrittenSpawnValue;
+		player->lastLevelSpecialSpawn = overwrittenSpawnValue;
 	}
 
 	lua_pop(lua, 1);
+}
+
+OverwritePlayerVar_LuaToCPP::OverwritePlayerVar_LuaToCPP(Player* pPlayer) {
+	player = pPlayer;
 }

@@ -1,3 +1,7 @@
+//#define MEASURE_RUN
+#define MEASURE_SAMPLE
+//#define MEASURE_DEBUG_PRINT
+
 #include "JSTestRunner.h"
 
 /* https://github.com/svaarala/duktape/blob/master/examples/guide/processlines.c
@@ -61,21 +65,26 @@ void JSTestRunner::RunWithMeasurements(const char* fileToWriteIn,
 	std::ofstream sampleTimeWriter;
 	sampleTimeWriter.open(fileToWriteIn);
 
+	sampleTimeWriter << "Sample,Time " << "\n";
 	for (int i = 1; i <= sampleCount; i++) {
 		high_resolution_clock::time_point sampleStart = high_resolution_clock::now();
-
 		for (int i = 1; i <= runsPerSample; i++) {
+			#ifdef MEASURE_RUN
 			high_resolution_clock::time_point runStart = high_resolution_clock::now();
 			runMethod.Run(duk);
 			high_resolution_clock::time_point runEnd = high_resolution_clock::now();
 			JSTestRunner::MeasureTime(runStart, runEnd, "\t\tRun");	// string in simple form to avoid throttle via many string conversions
+			#else
+			runMethod.Run(duk);
+			#endif
 		}
 
 		high_resolution_clock::time_point sampleEnd = high_resolution_clock::now();
+		#ifdef MEASURE_SAMPLE
 		long long sampleTime = JSTestRunner::MeasureTime(sampleStart, sampleEnd, "\tSample");
 
-		// TODO: Export (write to file) time info from runs/samples automatically
-		sampleTimeWriter << "Sample " << i << " time: " << sampleTime << " milliseconds" << "\n";
+		sampleTimeWriter << i << "," << sampleTime << "\n";
+		#endif
 	}
 
 	sampleTimeWriter.close();
@@ -86,12 +95,14 @@ long long JSTestRunner::MeasureTime(high_resolution_clock::time_point start, hig
 	microseconds time_span_micro = duration_cast<microseconds>(end - start);
 	milliseconds time_span_milli = duration_cast<milliseconds>(end - start);
 	seconds time_span_seconds = duration_cast<seconds>(end - start);
+	#ifdef MEASURE_DEBUG_PRINT
 	printf_s("%s took %I64i nanoseconds.\n", scope.c_str(), time_span_nano.count());
 	printf_s("%s took %I64i microseconds.\n", scope.c_str(), time_span_micro.count());
 	printf_s("            aka %I64i milliseconds.\n", time_span_milli.count());
 	printf_s("            aka %I64i seconds.\n", time_span_seconds.count());
+	#endif
 
-	return time_span_milli.count();
+	return time_span_nano.count();
 }
 
 JSTestRunner::~JSTestRunner() {
